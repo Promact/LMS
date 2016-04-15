@@ -237,6 +237,9 @@ _Pvt_Extensions
 
 #app .js and .js.map
 
+/LMS.Web/app/*.js
+/LMS.Web/app/*.map
+
 /LMS.Web/app/**/*.js
 /LMS.Web/app/**/*.map
 
