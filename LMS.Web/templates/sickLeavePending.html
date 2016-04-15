@@ -1,0 +1,50 @@
+﻿<div class="employees-grid lms-grid">
+    <div class="lms-panel">
+        <md-toolbar>
+            <div class="md-toolbar-tools md-default">
+                <span>Leave Request</span>
+            </div>
+        </md-toolbar>
+
+        <ul class="lms-tabs" layout="row">
+            <li><md-button a href="#/LeaveRequest/All">All</md-button></li>
+            <li><md-button a href="#/LeaveRequest/pending">Pending Request</md-button></li>
+            <li class="active"><md-button a href="#/LeaveRequest/sick">Sick Leave</md-button></li>
+            <li><md-button a href="#/LeaveRequest/compensation">Compensation Leave</md-button></li>
+        </ul>
+
+        <md-table-container ng-init="sickLeavePending()">
+            <md-progress-circular ng-show="loading"></md-progress-circular>
+            <table md-table ng-model="leaveTable">
+                <thead md-head>
+                    <tr md-row>
+                        <!--<th md-column>Sl. No.</th>-->
+                        <th md-column md-order-by="nameToLower">Name</th>
+                        <th md-column>From</th>
+                        <th md-column>To</th>
+                        <th md-column>Reason</th>
+                        <th md-column>Unit</th>
+                        <th md-column>Status</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr dir-paginate="leave in sickLeavePending | itemsPerPage: 5 track by $index">
+                        <!--<td md-cell>{{$index+1}}</td>-->
+                        <td md-cell><a href="#/employeeSickLeaveRequest/{{leave.Id}}" class="link-col">{{leave.EmployeeName}}</a></td>
+                        <td md-cell>{{leave.StartDate|date:'dd-MM-yyyy'}}</td>
+                        <td md-cell>{{leave.EndDate|date:'dd-MM-yyyy'}}</td>
+                        <td md-cell>{{leave.Reason}}</td>
+                        <td md-cell>{{leave.Unit}}</td>
+                        <td md-cell>{{$root.LeaveRequestCondition[leave.Condition]}}</td>
+                        <td md-cell>
+                            <md-button ng-click="sickLeaveApproveModal(leave)" title="Approve" class="md-icon-button"><md-icon md-font-set="material-icons"> done </md-icon></md-button>
+                            <md-button ng-click="sickLeaveRejectModal(leave)" title="Reject" class="md-icon-button"><md-icon md-font-set="material-icons"> clear </md-icon></md-button>
+                        </td>
+                        <td md-cell></td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

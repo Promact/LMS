@@ -1,0 +1,81 @@
+﻿<div class="details-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Leave Details</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form" ng-init="leaveRequestForEmployee()">
+                <md-progress-circular ng-show="loading"></md-progress-circular>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Name</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.EmployeeName}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Email</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.Email}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Designation</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{$root.EmployeeDesignation[leaveRequestForEmployee.Designation]}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Contact Number</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.EmergencyContact}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>From</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.StartDate | date:'dd/MM/yyyy'}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>To</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.EndDate | date:'dd/MM/yyyy'}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Applied On</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{leaveRequestForEmployee.CreatedOn | date:'dd/MM/yyyy'}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Medical Certificate</label>
+                    </div>
+                    <div flex="40">
+                        <img src="{{leaveRequestForEmployee.DoctorCertificate}}" />
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="back-btn"><a href="#/LeaveRequest/sick">Back</a></md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

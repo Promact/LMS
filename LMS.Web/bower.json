@@ -1,0 +1,25 @@
+{
+  "name": "LMS",
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "angular": "^1.5.1",
+    "angular-route": "^1.5.1",
+    "bootstrap": "^3.3.6",
+    "angular-material": "^1.0.6",
+    "angular-ui-grid": "^3.1.1",
+    "angular-material-data-table": "^0.9.15",
+    "angular-ui-calendar": "^1.0.1",
+    "angularUtils-pagination": "angular-utils-pagination#^0.11.0"
+  },
+  "resolutions": {
+    "angular": "^1.4.8",
+    "angular-material-data-table": "^0.9.15",
+    "ng-file-upload": "^12.0.4"
+  }
+}

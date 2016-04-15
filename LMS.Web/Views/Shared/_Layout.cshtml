@@ -1,0 +1,96 @@
+﻿@using Microsoft.AspNet.Identity
+
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    <link href='//fonts.googleapis.com/css?family=Roboto:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href="//fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    @Styles.Render("~/Content/css")
+
+</head>
+<body>
+    @*<div class="navbar navbar-inverse navbar-fixed-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                </div>
+                <div class="navbar-collapse collapse">
+                    <ul class="nav navbar-nav">
+                        <li>@Html.ActionLink("Home", "Index", "Home")</li>
+
+                    </ul>
+
+                    @Html.Partial("_LoginPartial")
+                </div>
+            </div>
+        </div>*@
+
+    <header>
+        <div class="lms-header">
+            <div layout="row">
+                <div flex class="lms-logo">
+                    <a href=""><img src="~/Content/images/logo.png" alt="Logo" height="20"></a>
+                </div>
+                <div flex="20" class="lms-profile">
+
+                    @if (Request.IsAuthenticated)
+                    {
+                        <md-menu md-position-mode="target-right target">
+                            <md-button aria-label="Open demo menu" ng-click="$mdOpenMenu($event)">
+                                <img src="~/Content/images/profile.jpg" alt="Profile" width="28" height="28">
+                                @User.Identity.GetUserName()
+                                <md-icon md-font-set="material-icons"> keyboard_arrow_down </md-icon>
+                            </md-button>
+                            <md-menu-content width="3">
+                                <md-menu-item><md-button><md-icon md-font-set="material-icons">person </md-icon><a href="#/employeeById/@User.Identity.GetUserId()">Profile</a></md-button></md-menu-item>
+
+                                @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "" }))
+                                {
+                                    @Html.AntiForgeryToken()
+
+                                    <md-menu-item>
+                                      <md-button>
+                                        <a href="javascript:document.getElementById('logoutForm').submit()">
+                                            <md-icon md-font-set="material-icons"> settings_power </md-icon>Log Out
+                                        </a>
+                                      </md-button>
+                                    </md-menu-item>
+                                }
+
+                            </md-menu-content>
+                        </md-menu>
+                    }
+
+                    else
+                    {
+                        <md-button>
+                            <a href="account/login">
+                                Login
+                            </a>
+                        </md-button>
+                    }
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="">
+        @RenderBody()
+
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/app")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

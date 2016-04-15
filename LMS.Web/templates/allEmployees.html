@@ -1,0 +1,43 @@
+﻿<div class="employees-grid lms-grid">
+    <div class="lms-panel">
+        <md-toolbar>
+            <div class="md-toolbar-tools">
+                <span>Employees</span>
+                <span flex></span>
+                <md-button a href="#/employee/create" class="add-item"><md-icon md-font-set="material-icons"> add_box </md-icon>New</md-button>
+            </div>
+        </md-toolbar>
+        <div class="search-field" layout="row">
+            <md-input-container flex="100">
+                <input type="text" ng-model="query" placeholder="Search" />
+            </md-input-container>
+        </div>
+        <md-table-container ng-init="getEmployeeDataFromService()">
+            <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+            
+            <table md-table>
+                <thead md-head md-order="myOrder">
+                    <tr md-row>
+                        <th md-column md-order-by="Name"><span>Name</span></th>
+                        <th md-column md-order-by="Designation"><span>Designation</span></th>
+                        <th md-column><span>Sick Leave</span></th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr dir-paginate="employee in (employeeList | filter : query |itemsPerPage: 5| orderBy :  myOrder)  ">
+                        <td md-cell>{{employee.Name}}</td>
+                        <td md-cell>{{employee.Designation}}</td>
+                        <td md-cell><a href="" class="link-col" ng-click="sickLeaveApplyModal(employee)" ng-controller="leaveRequestController">Apply</a></td>
+                        <td md-cell>
+                            <md-button a href="#/employee/Details/{{employee.Id}}" title="Details" class="md-icon-button details-btn"><md-icon md-font-set="material-icons"> info_outline </md-icon></md-button>
+                            <md-button a href="#/employee/edit/{{employee.Id}}" title="Update" class="md-icon-button update-btn"><md-icon md-font-set="material-icons"> edit </md-icon></md-button>
+                            <md-button a href="#/employee/delete/{{employee.Id}}" title="Delete" class="md-icon-button delete-btn"><md-icon md-font-set="material-icons"> delete </md-icon></md-button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+        <dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>
+

@@ -1,0 +1,69 @@
+﻿<div class="create-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Sick Leave</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form" ng-init="leaveById()">
+                <div layout="row">
+                    <div flex="25">
+                        <label>Doctor's Name</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="DoctorName" name="DoctorName" ng-model="leaveById.DoctorName" ng-required="true">
+                            <p ng-show="form.DoctorName.$invalid && form.DoctorName.$touched" class="lms-error-msg">please enter the Doctor name correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Illness</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="Reason" name="Reason" ng-model="leaveById.Reason" ng-required="true">
+                            <p ng-show="form.Reason.$invalid && form.Reason.$touched" class="lms-error-msg">please enter the Reason correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Leave Upto</label>
+                    </div>
+                    <div flex="40">
+                        <md-datepicker ng-model="leaveById.EndDate" md-placeholder="Enter date" md-min-date="leaveById.StartDate" ng-required="true"></md-datepicker>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Doctor's Contact</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="DoctorContact" name="DoctorContact" ng-model="leaveById.Number" ng-required="true">
+                            <p ng-show="form.DoctorContact.$invalid && form.DoctorContact.$touched" class="lms-error-msg">please enter the email correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Medical Certificate</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="file" ngf-select="onFileSelect($files)" id="fileSelect"/>
+                                <p ng-show="form.MedicalCertificate.$invalid && form.MedicalCertificate.$touched" class="lms-error-msg">please enter the email correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="create-btn" ng-click="sickLeaveLoaderModal(leaveById)" ng-disabled="form.$invalid">Update</md-button>
+                        <md-button class="cancel-btn" ng-click="onCancel()">Cancel</md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

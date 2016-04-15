@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div ng-init="getTeamProjectByIdFromService()">
+        <table>
+            <tr>
+                <td> &nbsp;&nbsp;ProjectName</td>
+                <td> &nbsp;&nbsp;ProjectId</td>
+                <td> &nbsp;&nbsp;TeamLeaderName</td>
+                <td>&nbsp;&nbsp;EmployeeName</td>
+            </tr>
+            <tr>
+                <td>&nbsp;&nbsp;{{project.ProjectName}}</td>
+                <td> &nbsp;&nbsp;{{project.ProjectId}}</td>
+                <td>&nbsp;&nbsp;{{project.TeamLeader.Name}}</td>
+                <td ng-repeat="employee in project.ListOfEmployee">
+                    &nbsp;&nbsp;&nbsp;  {{employee.Name}}<br />
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

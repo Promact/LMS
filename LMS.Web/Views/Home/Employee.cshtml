@@ -1,0 +1,27 @@
+﻿
+@{
+    ViewBag.Title = "Employee";
+}
+
+@*<h2>Employee</h2>*@
+
+@*<a type="button" href="#/employee/ApplyLeaveRequest">Apply for Leave</a>
+<br />
+<a type="button" href="#/Holidays">Holiday List</a>
+<br />
+<a type="button" href="#/employee/LeaveHistory">Leave History</a>
+<br />*@
+
+
+
+<div layout="row" class="lms-main-content">
+    <div flex="20" class="lms-sidebar" active-class>
+        <md-list-item><md-button><a href="#/employee/ApplyLeaveRequest"><md-icon md-font-set="material-icons"> group </md-icon>Apply for Leave</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/Holidays"><md-icon md-font-set="material-icons"> sentiment_very_satisfied </md-icon>Holiday List</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/LeaveHistory"><md-icon md-font-set="material-icons"> assignment </md-icon>Leave History</a></md-button></md-list-item>
+
+    </div>
+    <div flex class="lms-content">
+        <ng-view></ng-view>
+    </div>
+</div>

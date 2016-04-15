@@ -1,0 +1,30 @@
+﻿<form ng-init="getEmployeeByIdDataFromService()" name="form">
+    <md-progress-circular ng-show="loading"></md-progress-circular>
+    LEAVE APPLIED
+    <table>
+        <tr>
+            <td><b>Name :</b></td>
+            <td>{{getEmployeeByIdDataFromService.Name}}</td>
+        </tr>
+        <tr>
+            <td><b>Email :</b></td>
+            <td>{{getEmployeeByIdDataFromService.Email}}</td>
+        </tr>
+        <tr>
+            <td><b>Designation :</b></td>
+            <td>{{getEmployeeByIdDataFromService.Designation}}</td>
+        </tr>
+        <tr>
+            <td><b>Contact Number :</b></td>
+            <td>{{getEmployeeByIdDataFromService.PhoneNumber}}</td>
+        </tr>
+        <tr>
+            <td><b>From Date :</b></td>
+            <td><input type="date" ng-model="getEmployeeByIdDataFromService.StartDate" ng-required="true" name="date"/><p ng-show="form.date.$invalid && form.date.$dirty">Required</p></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Apply" ng-click="applySickLeave(getEmployeeByIdDataFromService)" ng-disabled="form.$invalid"/></td>
+            <td><input type="button" value="Cancel" ng-click="" /></td>
+        </tr>
+    </table>
+</form>

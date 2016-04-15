@@ -1,0 +1,30 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Apply Sick Leave</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="form">
+            <div layout="row">
+                <div flex="25">
+                    <label>Start Date</label>
+                </div>
+                <div flex="40" class="lms-datepicker">
+                    <md-datepicker md-placeholder="Enter date" ng-model="getEmployeeByIdDataFromService.StartDate" ng-required="true" name="date"></md-datepicker>
+                    <div ng-show="form.date.$invalid && form.date.$touched" class="lms-error-msg">
+                        <div ng-message="required">Required</div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+        <md-button ng-click="applySickLeave()" ng-disabled="form.$invalid" class="apply-btn">Apply</md-button>
+    </md-dialog-actions>
+</md-dialog>

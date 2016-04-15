@@ -1,0 +1,57 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Edit Project</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="form" ng-init="projectCreated()">
+            <div layout="row">
+                <div flex="25">
+                    <label>Project Name</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <input type="text" placeholder="Project Name" ng-model="updateProject.ProjectName" value="updateProject.ProjectName" name="name" ng-required="true">
+                        <p class="lms-error-msg" ng-show="form.name.$invalid && form.name.$touched">Required!</p>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Team Leader</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <md-select ng-model="updateProject.TeamLeader" ng-required="true" name="teamLeader">
+                            <md-option ng-repeat="employees in teamLeaderList" ng-selected="updateProject.TeamLeader" value="{{employees}}">{{employees.Name}}</md-option>
+                        </md-select>
+                        <p ng-show="form.teamLeader.$invalid && form.teamLeader.$touched" class="lms-error-msg">Required!</p>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Employee</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <tags-input ng-model="defaultTag" name="employee" min-tags="1">
+                            <auto-complete source="loadTags($query)"></auto-complete>
+                        </tags-input>
+                        <p class="lms-error-msg" ng-show="form.employee.$invalid && form.employee.$touched">Select atleast 1 employee</p>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+        <md-button ng-click="updateTeamProjectToService(project)" ng-disabled="form.$invalid" class="positive-btn">Update</md-button>
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+    </md-dialog-actions>
+</md-dialog>

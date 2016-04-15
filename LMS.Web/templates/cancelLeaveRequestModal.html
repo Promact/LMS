@@ -1,0 +1,42 @@
+﻿<md-dialog ng-init="leaveRequestForEmployee()">
+    <md-content>
+        <form name="form">
+            <center><h3><u>Cancel Leave</u></h3></center>
+            <table>
+                <tr>
+                    <td><b>Name :</b></td>
+                    <td>{{leaveRequestForEmployee.EmployeeName}}</td>
+                </tr>
+                <tr>
+                    <td><b>Email :</b></td>
+                    <td>{{leaveRequestForEmployee.Email}}</td>
+                </tr>
+                <tr>
+                    <td><b>Reason :</b></td>
+                    <td>{{leaveRequestForEmployee.Reason}}</td>
+                </tr>
+                <tr>
+                    <td><b>Contact Number :</b></td>
+                    <td>{{leaveRequestForEmployee.EmergencyContact}}</td>
+                </tr>
+                <tr>
+                    <td><b>From :</b></td>
+                    <td>{{leaveRequestForEmployee.StartDate|date:'dd-MM-yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td><b>To :</b></td>
+                    <td>{{leaveRequestForEmployee.EndDate|date:'dd-MM-yyyy'}}</td>
+                </tr>
+                <tr>
+                    <td><b>Applied On :</b></td>
+                    <td>{{leaveRequestForEmployee.CreatedOn|date:'dd-MM-yyyy'}}</td>
+                </tr>
+            </table>
+
+            <md-dialog-actions>
+                <md-button type="button" class="btn btn-default" ng-click="cancelModal()">Dismiss</md-button>
+                <md-button type="button" class="btn btn-primary" ng-click="leaveRequestCancel(leaveRequestForEmployee.Id)" ng-disabled="form.$invalid">Sure to Cancel</md-button>
+            </md-dialog-actions>
+        </form>
+    </md-content>
+</md-dialog>

@@ -1,0 +1,42 @@
+﻿<div class="compensation-history lms-grid">
+    <div class="lms-panel">
+        <md-toolbar>
+            <div class="md-toolbar-tools md-default">
+                <span>Leave Request</span>
+            </div>
+        </md-toolbar>
+        <md-table-container ng-init="leaveRequestByTypeCompensation()">
+            <md-progress-circular ng-show="loading"></md-progress-circular>
+            <table md-table ng-model="leaveTable">
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column>Leave From</th>
+                        <th md-column>Leave To</th>
+                        <th md-column>Reason</th>
+                        <th md-column>Unit</th>
+                        <th md-column>Status</th>
+                        <th md-column>TeamLeader</th>
+                        <th md-column>TeamLeader Status</th>
+                        <th md-column>Reason</th>
+                    </tr>
+                </thead>
+                <tbody md-body>
+                    <tr md-row ng-repeat="leave in leaveRequestByTypeCompensation track by $index">
+                        <td md-cell>{{leave.StartDate|date:'dd-MM-yyyy'}}</td>
+                        <td md-cell>{{leave.EndDate|date:'dd-MM-yyyy'}}</td>
+                        <td md-cell>{{leave.Reason}}</td>
+                        <td md-cell>{{leave.Unit}}</td>
+                        <td md-cell>{{$root.LeaveRequestCondition[leave.Condition]}}</td>
+                        <td md-cell><span ng-repeat="list in leave.TeamLeader track by $index"><p>{{list}}</p></span></td>
+                        <td md-cell><span ng-repeat="list in leave.ConditionList track by $index"><p>{{$root.LeaveRequestCondition[list]}}</p></span></td>
+                        <td md-cell><span ng-repeat="list in leave.ResultReason track by $index"><p>{{list}}</p></span></td>
+                        <td md-cell><md-button ng-click="cancelLeaveRequestModal(leave.Id)" ng-show="leave.Condition != '5' && leave.Condition != '3' && leave.EndDate >= currentDate">Cancel Leave</md-button></td>
+                    </tr>
+                    <tr md-row>
+                        <td md-cell><a href="#/LeaveHistory">Back</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </div>
+</div>

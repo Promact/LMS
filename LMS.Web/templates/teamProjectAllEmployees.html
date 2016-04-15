@@ -1,0 +1,9 @@
+﻿<div ng-init="projectCreate()">
+    <select ng-model='teamLeader' ng-options='employees.Name for employees in teamLeaderList'></select>
+    <tags-input ng-model="defaultTag">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+    <input type="text" ng-model="projectName" placeholder="Enter Project Name" value="Enter Project Name" />
+    <button ng-click="addTeamProjectToService()">Add</button>
+</div>
+<a href="#/employee/Project/DisplayTeam">Back</a>

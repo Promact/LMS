@@ -1,0 +1,47 @@
+﻿<div class="employees-grid lms-grid">
+    <div class="lms-panel">
+<md-toolbar>
+    <div class="md-toolbar-tools md-default">
+        <h1>Team Project</h1>
+        <span flex></span>
+                <md-button ng-click="createProjectModal()" class="add-item"><md-icon md-font-set="material-icons"> add_box </md-icon>New</md-button>
+    </div>
+</md-toolbar>
+        <div class="search-field" layout="row">
+            <md-input-container flex="100">
+                <input type="text" ng-model="project.ProjectName" placeholder="Search" />
+            </md-input-container>
+        </div>
+<md-table-container>
+    <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular> 
+        <table md-table>
+            <thead md-head md-order="myOrder">
+                <tr md-row>
+                    <th md-column md-order-by="ProjectName">ProjectName</th>
+                    <th md-column >Team Leader</th>
+                    <th md-column>Employee</th>
+                </tr>
+            </thead>
+            <tbody md-body>
+
+                <tr dir-paginate="project in (projectList| filter : project.ProjectName |  itemsPerPage: 3| orderBy :myOrder )" >
+                    <td md-cell>{{project.ProjectName}}</td>
+                    <td md-cell>{{project.TeamLeader.Name}}</td>
+                    <td md-cell> <span ng-repeat="employee in project.ListOfEmployee"><p>{{employee.Name}}</p></span></td>
+
+                    <td md-cell>
+                      
+                                <md-button ng-click="updateProjectModal(project)" ng-if=" !project.IsProjectArchived" title="Edit" class="md-icon-button"> <md-icon md-font-set="material-icons"> edit </md-icon></md-button>
+                                <md-button ng-click="archiveProjectModal(project.ProjectId)" ng-if="!project.IsProjectArchived" title="Archive" class="md-icon-button"> <md-icon md-font-set="material-icons"> archive </md-icon></md-button>
+                    </td>
+                  
+                </tr>
+
+
+            </tbody>
+
+        </table>
+</md-table-container>
+<dir-pagination-controls></dir-pagination-controls>
+    </div>
+</div>

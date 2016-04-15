@@ -1,0 +1,24 @@
+﻿@{
+    ViewBag.Title = "Admin";
+}
+
+@*<h2>Admin</h2>
+<a href="#/employee/allEmployees">Employees</a><br />
+<a href="#/HolidayType"> Holiday </a><br />
+<a href="#/LeaveType">Leave Details </a><br />
+<a href="#/allLeaveRequest">Leave Request</a><br />
+<a href="/#/employee/Project/DisplayTeam">Project</a>*@
+
+<div layout="row" class="lms-main-content">
+    <div flex="20" class="lms-sidebar" active-class>
+        <md-list-item><md-button><a href="#/employee/allEmployees"><md-icon md-font-set="material-icons"> group </md-icon>Employees</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/HolidayType"><md-icon md-font-set="material-icons"> sentiment_very_satisfied </md-icon>Holiday</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/LeaveType"><md-icon md-font-set="material-icons"> assignment </md-icon>Leave Details</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/LeaveRequest/All"><md-icon md-font-set="material-icons"> input </md-icon>Leave Request</a></md-button></md-list-item>
+        <md-list-item><md-button><a href="#/Project/DisplayTeam"><md-icon md-font-set="material-icons"> layers </md-icon>Project</a></md-button></md-list-item>
+    </div>
+    <div flex class="lms-content">
+        <ng-view></ng-view>
+    </div>
+</div>
+

@@ -1,0 +1,57 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Add Holiday</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="form">
+            <div layout="row">
+                <div flex="25">
+                    <label>Date</label>
+                </div>
+                <div flex="40" class="lms-datepicker">
+                    <md-datepicker md-placeholder="Enter date" ng-model="newHoliday.Date" name="date" ng-required="true" md-min-date="currentDate"></md-datepicker>
+                    <div ng-messages="form.date.$error" ng-show="form.date.$invalid && form.date.$touched" class="lms-error-msg">
+                        <div ng-message="required">Required!</div>
+                    </div>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Name</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <input type="text" ng-model="newHoliday.Name" name="name" ng-required="true" placeholder="Name">
+                        <p ng-show="form.name.$invalid && form.name.$touched" class="lms-error-msg">Please enter a valid name</p>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Type of Holiday</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <md-select ng-model="newHoliday.TypeOfHoliday" name="type" ng-required="true" placeholder="Type of Holiday">
+                            <md-option value="">--Select a type of Holiday--</md-option>
+                            <md-option>General</md-option>
+                            <md-option>Restricted</md-option>
+                        </md-select>
+                        <p ng-show="form.type.$invalid && form.type.$touched" class="lms-error-msg">Please enter a valid type</p>
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+        <md-button ng-click="addHoliday(newHoliday)" ng-disabled="form.$invalid" class="add-btn">Add</md-button>
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+    </md-dialog-actions>
+</md-dialog>

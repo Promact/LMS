@@ -1,0 +1,21 @@
+﻿<center>
+
+    <div ng-init="getHolidayById()">
+         
+        <strong> Date: </strong>
+        {{holiday.Date|date:'dd-MM-yyyy'}}
+        <br />
+        
+        <strong> Holiday Name: </strong>
+        {{holiday.Name}}
+        <br />
+
+        <strong> Holiday Type: </strong>
+        {{$root.TypeOfHoliday[holiday.TypeOfHoliday]}}
+
+        <br />
+        <a href="#/HolidayType"> Back </a>
+
+    </div>
+
+</center>

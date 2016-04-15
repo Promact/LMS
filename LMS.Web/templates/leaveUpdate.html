@@ -1,0 +1,30 @@
+﻿
+
+<div ng-init="getLeaveById()">
+    <center>
+        <h3><u>Edit Leave Details</u></h3>
+
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <select ng-model="leave.LeaveType" ng-options="leave.value as leave.name for leave in leaveTypes"></select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Allowed Days:</td>
+                <td> <input type="text" value=leave.AllowedDays ng-model="leave.AllowedDays" /> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="Update" ng-click="editLeave(leave)" />
+                    <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+                    <a href="#/LeaveType"> <input type="button" value="Back" /> </a>
+                </td>
+            </tr>
+        </table>
+    </center>
+</div>

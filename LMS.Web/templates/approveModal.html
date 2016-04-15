@@ -1,0 +1,38 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Approve Leave</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="form">
+            <div layout="row">
+                <div flex="40">
+                    <label>No. of days approved</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <input type="text" placeholder="No. of days approved" ng-model="leave.Days" ng-required="true" name="Days">
+                        <p ng-show="form.Days.$invalid && form.Days.$dirty" class="lms-error-msg">Required</p>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="40">
+                    <label>Reason (If no. of days reduced)</label>
+                </div>
+                <div flex="40" class="lms-textarea">
+                    <textarea ng-model="leave.ResultReason" rows="4"></textarea>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+        <md-button ng-click="leaveRequestApprove()" ng-disabled="form.$invalid" class="positive-btn">Approve</md-button>
+    </md-dialog-actions>
+</md-dialog>

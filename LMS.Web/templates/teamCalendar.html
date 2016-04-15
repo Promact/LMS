@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title></title>
+</head>
+<body>
+    <div ng-init="getAllProjectByTeamLeaderId()">
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular> 
+        <label>Select Project:   </label><md-select ng-model="teamProjectDetails" ng-change="getTeamCalendar(teamProjectDetails)">
+            <md-option ng-model="teamProjectDetails" ng-repeat="list in teamProjectDetails track by $index">{{list.ProjectName}}</md-option>
+        </md-select> 
+        <!--&nbsp;&nbsp;<input type="button" value="Refresh" ng-click="getAllProjectByTeamLeaderId()"><table>-->
+
+
+
+<table>
+    <tr>
+        <td><b>Name</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>Type Of Leave</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>Unit Of Leave</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>EndDate</b></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td><b>StartDate</b></td>
+    </tr>
+    <tr ng-repeat="employee in teamProjectLeaveDetails track by $index">
+        <td>{{employee.EmployeeName}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{employee.Type}}  Leave</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{employee.Unit}} Day</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{employee.EndDate}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>{{employee.StartDate}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+
+
+
+    </div>
+    
+    <div ui-calendar="uiConfig.calendar" ng-model="eventSources"></div>
+  
+
+</body>
+</html>

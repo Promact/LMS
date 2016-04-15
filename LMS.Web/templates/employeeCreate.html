@@ -1,0 +1,91 @@
+﻿<div class="create-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Create New Employee</h4>
+        </div>
+        <div class="lms-panel-body">
+        <form name="form" ng-init="allLeaveList()">
+
+                <div layout="row">
+                    <div flex="25">
+                        <label>Name</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="Name" name="name" ng-model="newEmployee.Name" ng-required="true">
+                            <p ng-show="form.name.$invalid && form.name.$touched" class="lms-error-msg">please enter the name correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Email</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="email" placeholder="Email" name="email" ng-model="newEmployee.Email" ng-required="true">
+                            <p ng-show="form.email.$invalid && form.email.$touched" class="lms-error-msg">please enter the email correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Designation</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <md-select ng-model="newEmployee.Designation" ng-required="true" name="designation">
+                            <md-option selected>User</md-option>
+                            <md-option>TeamLeader</md-option>
+                            <!--<md-option>Option03</md-option>
+                                <md-option>Option04</md-option>
+                            <md-option>Option05</md-option>-->
+                            </md-select>
+                            <p ng-show="form.designation.$invalid && form.designation.$touched" class="lms-error-msg">please enter the designation</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Contact Number</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="Contact Number" name="number" ng-model="newEmployee.PhoneNumber" ng-required="true">
+                            <p ng-show="form.number.$invalid && form.number.$touched" class="lms-error-msg">please enter the number correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Date of Joining</label>
+                    </div>
+                    <div flex="40" class="lms-datepicker">
+                        <md-datepicker ng-model="newEmployee.DateOfJoining" md-placeholder="Enter date" name="date" required></md-datepicker>
+                        <div ng-show="form.date.$touched && form.date.$invalid" class="lms-error-msg">
+                            <div ng-message="required">Required</div>
+                        </div>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                    <label>Password</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                        <input type="password" placeholder="Enter Password" name="password" ng-model="newEmployee.Password" ng-required="true">
+                            <p ng-show="form.password.$invalid && form.password.$touched" class="lms-error-msg">please enter the password</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="create-btn" ng-click=" addEmployeeFromService(newEmployee)" ng-disabled="form.$invalid">Create</md-button>
+                    <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>                    
+                        <md-button class="cancel-btn" ng-click="onCancel()">Cancel</md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

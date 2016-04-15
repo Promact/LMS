@@ -1,0 +1,49 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Delete Holiday</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+
+    <md-dialog-content>
+        <div ng-init="getHolidayById()">
+            <div layout="row">
+                <div flex="25">
+                    <label>Date</label>
+                </div>
+                <div flex="40">
+                    <label class="lms-info-field">{{holiday.Date|date:'yyyy-MM-dd'}}</label>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Name</label>
+                </div>
+                <div flex="40">
+                    <label class="lms-info-field"> {{holiday.Name}}</label>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Type</label>
+                </div>
+                <div flex="40">
+                    <label class="lms-info-field">{{holiday.TypeOfHoliday.name}}</label>
+                </div>
+            </div>
+
+        </div>
+    </md-dialog-content>
+
+
+    <md-dialog-actions>
+        <md-button class="cancel-btn" ng-click="cancelModal()">Cancel</md-button>
+        <md-button class="positive-btn" ng-click="deleteHoliday()">Delete</md-button>
+
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+    </md-dialog-actions>
+</md-dialog>

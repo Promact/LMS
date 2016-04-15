@@ -1,0 +1,153 @@
+﻿<!--<form name="form">
+    <table>
+        <tr>
+            <td>
+                Type Of Leave :
+            </td>
+            <td>
+                <select ng-model="request.Type" ng-required="true" name="type">
+                    <option>Casual</option>
+                    <option>Compensation</option>
+                    <option>Paternity</option>
+                    <option>Maternity</option>
+                </select>
+                <p ng-show="form.type.$invalid && form.date.$dirty">Required</p>
+            </td>
+        </tr>
+        <tr>
+            <td ng-show="request.Type != 'Compensation'">From :</td>
+            <td ng-show="request.Type == 'Compensation'">Leave Date :</td>
+            <td><input type="date" ng-model="request.StartDate" ng-required="true" name="StartDate" /><p ng-show="form.StartDate.$invalid && form.StartDate.$dirty">Required</p></td>
+        </tr>
+        <tr>
+            <td ng-show="request.Type != 'Compensation'">To :</td>
+            <td ng-show="request.Type == 'Compensation'">Compensation Date :</td>
+            <td><input type="date" ng-model="request.EndDate" ng-required="true" name="EndDate" /><p ng-show="form.EndDate.$invalid && form.EndDate.$dirty">Required</p></td>
+        </tr>
+        <tr>
+            <td>Reason:</td>
+            <td><textarea ng-model="request.Reason" ng-required="true" name="Reason" /><p ng-show="form.Reason.$invalid && form.Reason.$dirty">Required</p></td>
+        </tr>
+        <tr>
+            <td>
+                Unit :
+            </td>
+            <td>
+                <select ng-model="request.Unit" ng-required="true" name="Unit">
+                    <option>Full</option>
+                    <option>FirstHalf</option>
+                    <option>SecondHalf</option>
+                </select>
+                <p ng-show="form.Unit.$invalid && form.Unit.$dirty">Required</p>
+            </td>
+        </tr>
+        <tr>
+            <td>Emergency Contact:</td>
+            <td><input type="text" ng-model="request.EmergencyContact" ng-required="true" name="Reason" /><p ng-show="form.Reason.$invalid && form.Reason.$dirty">Required</p></td>
+        </tr>
+        <tr></tr>
+        <tr></tr>
+        <tr></tr>
+        <tr>
+            <td><input type="button" value="Apply" ng-click="leaveRequestApply(request)" ng-disabled="form.$invalid" /></td>
+            <td> <a href="#/"> <input type="button" value="Cancel" /> </a> </td>
+        </tr>
+    </table>
+</form>-->
+
+
+<div class="create-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Leave Apply</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form">
+                <div layout="row">
+                    <div flex="25">
+                        <label>Type Of Leave</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <md-select ng-model="request.Type" ng-required="true" name="type">
+                                <md-option selected>Casual</md-option>
+                                <md-option>Compensation</md-option>
+                                <md-option>Paternity</md-option>
+                                <md-option>Maternity</md-option>
+                            </md-select>
+                            <p ng-show="form.type.$invalid && form.type.$touched" class="lms-error-msg">please enter the type</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label ng-show="request.Type != 'Compensation'">From</label>
+                        <label ng-show="request.Type == 'Compensation'">Leave Date</label>
+                    </div>
+                    <div flex="40">
+                        <md-datepicker ng-model="request.StartDate" md-placeholder="Enter date" name="date" md-min-date="minDate" ng-required="true"></md-datepicker>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label ng-show="request.Type != 'Compensation'">To</label>
+                        <label ng-show="request.Type == 'Compensation'">Compensation Date</label>
+                    </div>
+                    <div flex="40">
+                        <md-datepicker ng-model="request.EndDate" md-placeholder="Enter date" md-min-date="request.StartDate" ng-required="true"></md-datepicker>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Reason</label>
+                    </div>
+                    <!--<div flex="40">
+
+                        <textarea placeholder="Reason" name="Reason" ng-model="request.Reason" ng-required="true" rows="5"></textarea>
+                        <p ng-show="form.Reason.$invalid && form.Reason.$touched" class="lms-error-msg">please enter the reason correctly</p>
+
+                    </div>-->
+
+                    <div flex="40" class="lms-textarea">
+                        <textarea ng-model="request.Reason" ng-required="true" name="Reason" rows="4"></textarea>
+                        <p ng-show="form.ResultReason.$invalid && form.ResultReason.$touched" class="lms-error-msg">Required!</p>
+                    </div>
+                </div>
+
+                <div layout="row">
+                    <div flex="25">
+                        <label>Unit</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <md-select ng-model="request.Unit" ng-required="true" name="Unit">
+                                <md-option selected>Full</md-option>
+                                <md-option>FirstHalf</md-option>
+                                <md-option>SecondHalf</md-option>
+                            </md-select>
+                            <p ng-show="form.Unit.$invalid && form.Unit.$touched" class="lms-error-msg">please enter the Unit</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Emergency Number</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="Emergency Number" name="number" ng-model="request.EmergencyContact" ng-required="true">
+                            <p ng-show="form.number.$invalid && form.number.$touched" class="lms-error-msg">please enter the number correctly</p>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="create-btn" ng-click="leaveApplyLoaderModal(request)" ng-disabled="form.$invalid">Apply</md-button>
+                        <md-button class="cancel-btn" ng-click="onCancel()">Cancel</md-button>
+                    </div>
+                </div>
+                <md-progress-circular md-mode='indeterminate' ng-show="loading"></md-progress-circular>
+            </form>
+        </div>
+    </div>
+</div>

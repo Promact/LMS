@@ -1,0 +1,75 @@
+﻿
+    <!--<form name="form" ng-init="getEmployeeByIdDataFromService()">
+
+        <center>
+
+            Name:{{employee.Name}}<br>
+            Designation:{{employee.Designation}}<br>
+            PhoneNumber:{{employee.PhoneNumber}}<br>
+            DateOfJoining:{{employee.DateOfJoining}}<br>
+            Email:{{employee.Email}}<br><br>
+
+            <input type="button" value="Cancel" ng-click="onCancel()" />&nbsp;&nbsp;
+            <input type="button" value="Delete" ng-click="deleteEmployeeFromService()" />
+        </center>
+    </form>-->
+
+
+<div class="details-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Employee Delete</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form" ng-init="getEmployeeByIdDataFromService()">
+                <div layout="row">
+                    <div flex="25">
+                        <label>Name</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Name}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Designation</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Designation}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Phone Number</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.PhoneNumber}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Date of Joining</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.DateOfJoining | date: 'dd/MM/yyyy'}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Email</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Email}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="delete-btn" ng-click="deleteEmployeeFromService()">Delete</md-button>
+                        <md-button class="cancel-btn" ng-click="onCancel()">Cancel</md-button>
+                        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular> 
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -234,3 +234,13 @@ _Pvt_Extensions
 
 # FAKE - F# Make
 .fake/
+
+#app .js and .js.map
+
+/LMS.Web/app/**/*.js
+/LMS.Web/app/**/*.map
+
+#bower
+
+/LMS.Web/Scripts
+

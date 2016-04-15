@@ -1,0 +1,79 @@
+﻿<div class="holiday-grid lms-grid">
+    <div class="lms-panel">
+<md-toolbar>
+    <div class="md-toolbar-tools md-default">
+        <h1>Holidays</h1>
+        <span flex></span>
+                <md-button ng-click="holidayAddModal()" class="add-item"><md-icon md-font-set="material-icons"> add_box </md-icon>New</md-button>
+    </div>
+</md-toolbar>
+<!--<div ng-init="allHolidayList()">
+    <div class="search-field" layout="row">
+        <md-input-container flex="100">
+            <input type="text" ng-model="holiday.Date.getFullYear()" placeholder="Search" />
+        </md-input-container>
+    </div>
+</div>-->
+
+        <!--<md-select ng-model="holidayYear" name="holiday" ng-required="true" placeholder="--Select the year--" value="holidayYear">
+            <md-option ng-repeat="holiday in holidayList">{{holiday.Date.getFullYear()}}</md-option>
+        </md-select>-->
+
+
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+
+<md-table-container ng-init="allHolidayList()">
+            <br />
+    <table md-table ng-model="holidayListForAdmin">
+                <h3>General Holidays</h3>
+        <thead md-head>
+            <tr md-row>
+
+                <th md-column> Date </th>
+                <th md-column> Day </th>
+                <th md-column> Name </th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <!--<tr ng-repeat="holiday in holidayList| filter:holidayYear" ng-if="$root.TypeOfHoliday[holiday.TypeOfHoliday] == 'General'" md-row>-->
+            <tr ng-repeat="holiday in holidayList" ng-if="$root.TypeOfHoliday[holiday.TypeOfHoliday] == 'General'" md-row>
+
+                <td md-cell>{{holiday.Date | date:'dd-MM-yyyy'}}</td>
+                <td md-cell>{{holiday.Date | date:'EEEE'}}</td>
+                <td md-cell>{{holiday.Name}}</td>
+                <td md-cell>
+                    <md-button ng-click="holidayEditModal(holiday.Id)" title="Edit" class="md-icon-button"> <md-icon md-font-set="material-icons"> edit </md-icon> </md-button>
+                    <md-button ng-click="holidayDeleteModal(holiday.Id)" title="Delete" class="md-icon-button delete-btn"> <md-icon md-font-set="material-icons"> delete </md-icon> </md-button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+    <table md-table>
+                <h3 class="restricted">Restricted Holidays</h3>
+        <thead md-head>
+            <tr md-row>
+
+                <th md-column> Date </th>
+                <th md-column> Day </th>
+                <th md-column> Name </th>
+            </tr>
+        </thead>
+        <tbody md-body>
+            <tr ng-repeat="holiday in holidayList" ng-if="$root.TypeOfHoliday[holiday.TypeOfHoliday] == 'Restricted'" md-row>
+
+                <td md-cell>{{holiday.Date|date:'dd-MM-yyyy'}}</td>
+                <td md-cell>{{holiday.Date|date:'EEEE'}}</td>
+                <td md-cell>{{holiday.Name}}</td>
+           
+                <td md-cell>
+                            <md-button ng-click="holidayEditModal(holiday.Id)" title="Edit" class="md-icon-button"> <md-icon md-font-set="material-icons"> edit </md-icon> </md-button>
+                            <md-button ng-click="holidayDeleteModal(holiday.Id)" title="Delete" class="md-icon-button delete-btn"> <md-icon md-font-set="material-icons"> delete </md-icon> </md-button>
+                </td>
+
+            </tr>
+        </tbody>
+    </table>
+</md-table-container>
+    </div>
+</div>

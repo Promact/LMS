@@ -1,0 +1,39 @@
+﻿
+<div ng-init="getHolidayById()">
+    <center>
+        <h3><u>Edit Holiday</u></h3>
+
+        <table>
+            <tr>
+                <td>Date:</td>
+                <td> <input type="date" value={{holiday.Date|date:'yyyy-MM-dd'}} ng-model="holiday.Date" /> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Name:</td>
+                <td> <input type="text" value=holiday.Name ng-model="holiday.Name" /> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Type of holiday:</td>
+                <td>
+                    <select ng-model="holiday.TypeOfHoliday" ng-options="holiday.value as holiday.name for holiday in holidayTypes"></select>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td><input type="hidden" value=holiday.CreatedOn ng-model="holiday.CreatedOn" /> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" value="Update" ng-click="editHoliday(holiday)" />
+                    <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+                    <a href="#/HolidayType"> <input type="button" value="Back" /> </a>
+                </td>
+            </tr>
+        </table>
+    </center>
+</div>

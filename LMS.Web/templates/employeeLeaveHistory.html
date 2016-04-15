@@ -1,0 +1,37 @@
+﻿<div class="leave-history-grid lms-grid">
+    <div class="lms-panel">
+        <md-toolbar>
+            <div class="md-toolbar-tools md-default">
+                <span>Leave Request</span>
+            </div>
+        </md-toolbar>
+        <md-table-container ng-init="leaveDetails()">
+            <md-progress-circular ng-show="loading"></md-progress-circular>
+            <table md-table ng-model="leaveTable">
+                <thead md-head>
+                    <tr md-row>
+                        <th md-column>Leave Type</th>
+                        <th md-column>Leave Taken</th>
+                        <th md-column>Leave Left</th>
+                </thead>
+                <tbody md-body>
+                    <tr md-row>
+                        <td md-cell><a href="#/employee/LeaveHistory/Casual" class="link-col">Casual Leave</a></td>
+                        <td md-cell>{{leaveDetails.CasualLeaveTaken}}</td>
+                        <td md-cell>{{leaveDetails.CasualLeaveLeft}}</td>
+                    </tr>
+                    <tr md-row>
+                        <td md-cell><a href="#/employee/LeaveHistory/Sick" class="link-col">Sick Leave</a></td>
+                        <td md-cell>{{leaveDetails.SickLeaveTaken}}</td>
+                        <td md-cell>{{leaveDetails.SickLeaveLeft}}</td>
+                    </tr>
+                    <tr md-row>
+                        <td md-cell><a href="#/employee/LeaveHistory/Compensation" class="link-col">Compensation Leave</a></td>
+                        <td md-cell>{{leaveDetails.Compensation}}</td>
+                        <td md-cell>--</td>
+                    </tr>
+                </tbody>
+            </table>
+        </md-table-container>
+    </div>
+</div>

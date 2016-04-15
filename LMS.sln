@@ -1,0 +1,76 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Web", "LMS.Web\LMS.Web.csproj", "{AF4E4699-B5F0-45D2-BB42-2E34D46F52BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Core", "LMS.Core\LMS.Core.csproj", "{9BE37B33-1110-476C-8479-EDA065CD7046}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Repository", "LMS.Repository\LMS.Repository.csproj", "{BC3861FF-30C4-4A58-BEAE-7CAF72A4A39A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.DomainModel", "LMS.DomainModel\LMS.DomainModel.csproj", "{D8638927-A489-4751-B5BE-68DD094B1D78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Util", "LMS.Util\LMS.Util.csproj", "{8A99FDDD-EE73-42B8-BDCF-DE6072F3AB48}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LMS.Test", "LMS.Test\LMS.Test.csproj", "{0E593286-8853-4934-AFE9-4B398B9D7CC4}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 7
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://server12:8085/tfs/promactprojectcollection
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = LMS.DomainModel\\LMS.DomainModel.csproj
+		SccProjectName1 = LMS.DomainModel
+		SccLocalPath1 = LMS.DomainModel
+		SccProjectUniqueName2 = LMS.Repository\\LMS.Repository.csproj
+		SccProjectName2 = LMS.Repository
+		SccLocalPath2 = LMS.Repository
+		SccProjectUniqueName3 = LMS.Core\\LMS.Core.csproj
+		SccProjectName3 = LMS.Core
+		SccLocalPath3 = LMS.Core
+		SccProjectUniqueName4 = LMS.Web\\LMS.Web.csproj
+		SccProjectName4 = LMS.Web
+		SccLocalPath4 = LMS.Web
+		SccProjectUniqueName5 = LMS.Util\\LMS.Util.csproj
+		SccProjectName5 = LMS.Util
+		SccLocalPath5 = LMS.Util
+		SccProjectUniqueName6 = LMS.Test\\LMS.Test.csproj
+		SccProjectName6 = LMS.Test
+		SccLocalPath6 = LMS.Test
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AF4E4699-B5F0-45D2-BB42-2E34D46F52BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AF4E4699-B5F0-45D2-BB42-2E34D46F52BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AF4E4699-B5F0-45D2-BB42-2E34D46F52BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AF4E4699-B5F0-45D2-BB42-2E34D46F52BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9BE37B33-1110-476C-8479-EDA065CD7046}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9BE37B33-1110-476C-8479-EDA065CD7046}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9BE37B33-1110-476C-8479-EDA065CD7046}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9BE37B33-1110-476C-8479-EDA065CD7046}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC3861FF-30C4-4A58-BEAE-7CAF72A4A39A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC3861FF-30C4-4A58-BEAE-7CAF72A4A39A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC3861FF-30C4-4A58-BEAE-7CAF72A4A39A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC3861FF-30C4-4A58-BEAE-7CAF72A4A39A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D8638927-A489-4751-B5BE-68DD094B1D78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D8638927-A489-4751-B5BE-68DD094B1D78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D8638927-A489-4751-B5BE-68DD094B1D78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D8638927-A489-4751-B5BE-68DD094B1D78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8A99FDDD-EE73-42B8-BDCF-DE6072F3AB48}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8A99FDDD-EE73-42B8-BDCF-DE6072F3AB48}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8A99FDDD-EE73-42B8-BDCF-DE6072F3AB48}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8A99FDDD-EE73-42B8-BDCF-DE6072F3AB48}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E593286-8853-4934-AFE9-4B398B9D7CC4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E593286-8853-4934-AFE9-4B398B9D7CC4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E593286-8853-4934-AFE9-4B398B9D7CC4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E593286-8853-4934-AFE9-4B398B9D7CC4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

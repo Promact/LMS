@@ -1,0 +1,484 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+}
+header .lms-header {
+	background-color: #37474F;
+	border-bottom: 1px solid rgba(255,255,255,.1);
+	padding: 0 20px;
+}
+.lms-header .lms-logo a {
+    display: inline-block;
+	padding: 11px 0;
+}
+.lms-header .lms-profile {
+	text-align: right;
+}
+.lms-header .lms-profile .md-button a {
+    display: inline-block;
+    color: #fff;
+    width: 100%;
+    text-decoration: none;
+}
+.lms-header .lms-profile a:hover, .lms-header .lms-profile a:focus {
+    text-decoration: none;
+    outline: none;
+}
+.lms-header .lms-profile .md-button {
+	margin: 0;
+	padding: 5px;
+	color: #fff;
+	text-transform: none;
+	border-radius: 0;
+	font-weight: normal;
+}
+.lms-header .lms-profile button.md-button img {
+	vertical-align: middle;
+	border-radius: 50%;
+	margin-right: 6px;
+}
+.lms-header .lms-profile button.md-button md-icon {
+	color: #fff;
+	font-size: 18px;
+	vertical-align: -webkit-baseline-middle;
+}
+
+.lms-sidebar {
+	background-color: #263238;
+	color: rgba(255,255,255,.75);
+	padding: 20px 0;
+	min-height: 620px;
+}
+.lms-sidebar md-list-item {
+	min-height: 45px;
+}
+.lms-sidebar button.md-button {
+	width: 100%;
+    margin: 0;
+    border-radius: 0;
+    min-height: 45px;
+    text-transform: none;
+    text-align: left;
+    padding-left: 20px;
+    font-size: 14px;
+    font-weight: normal;
+}
+.lms-sidebar button.md-button:hover {
+	background-color: rgba(0,0,0,.1);
+	color: #fff;
+}
+.lms-sidebar button.md-button.active {
+	background-color: #26A69A;
+	color: #fff;
+}
+.lms-sidebar button.md-button a {
+    color: rgba(255,255,255,.75);
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+.lms-sidebar button.md-button a:hover, .lms-sidebar button.md-button a:focus {
+    text-decoration: none;
+    outline: none;
+}
+.lms-sidebar button.md-button md-icon {
+	color: rgba(255,255,255,.75);
+	margin-right: 6px;
+	font-size: 21px;
+}
+.lms-sidebar button.md-button:hover md-icon, .lms-sidebar button.md-button.active md-icon {
+	color: #fff;
+}
+
+.md-open-menu-container.md-active {
+	top: 47px !important;
+}
+.md-open-menu-container.md-active md-menu-item {
+	min-height: inherit;
+	height: inherit;
+}
+.md-open-menu-container.md-active md-menu-item .md-button {
+	font-size: 14px;
+    display: inline-block;
+}
+.md-open-menu-container.md-active md-menu-item .md-button a {
+    color: rgba(0, 0, 0, 0.870588);
+    display: inline-block;
+    width: 100%;
+    text-decoration: none;
+}
+.md-open-menu-container.md-active md-menu-item .md-button a:hover, .md-open-menu-container.md-active md-menu-item .md-button a:focus {
+    text-decoration: none;
+    outline: none;
+}
+.md-open-menu-container.md-active md-menu-item .md-button md-icon {
+	font-size: 21px;
+    margin-right: 10px;
+}
+
+/* Login */
+.lms-login {
+	background-color: #f5f5f5;
+    min-height: 560px;
+    padding-top: 60px;
+}
+.lms-login .login-form {
+	width: 320px;
+    margin: 0 auto;
+    text-align: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    border-radius: 3px;
+    padding: 24px;
+    color: #333;
+}
+.lms-login .login-form h3 {
+	margin: 0;
+	font-weight: normal;
+	padding-bottom: 20px;
+}
+.lms-login .login-form button.md-button {
+	width: 95%;
+    background-color: #26A69A;
+    color: #fff;
+    padding: 4px;
+    margin: 20px 0;
+}
+.lms-login .login-form a {
+	font-size: 14px;
+	text-decoration: none;
+	color: #26A69A;
+}
+.lms-login .login-form a:active {
+	color: #26A69A;
+}
+.lms-login .login-form md-input-container.md-input-focused label, .lms-login .login-form md-input-container.md-input-focused md-icon {
+	color: #26A69A;
+}
+.lms-login .login-form md-input-container.md-input-focused input {
+	border-bottom: 2px solid #26A69A;
+}
+
+/* Forgot Password */
+.md-dialog-container md-dialog md-dialog-actions button.md-button.md-primary.md-default-theme {
+	background-color: #26A69A;
+	color: #fff;
+}
+
+/* Create Employee */
+.lms-content {
+    background-color: #f5f5f5;
+}
+.lms-panel {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 1px rgba(0,0,0,.05);
+    box-shadow: 0 1px 1px rgba(0,0,0,.05);
+}
+.lms-panel .lms-panel-heading h4 {
+    font-size: 17px;
+    margin: 0;
+    margin-bottom: 20px;
+}
+.lms-panel .lms-panel-body {
+    padding-top: 20px;
+}
+.lms-panel .lms-panel-body label, .lms-modal md-dialog-content label {
+    font-size: 14px;
+    font-weight: 500;
+    padding-top: 18px;
+    display: inline-block;
+}
+.lms-panel .lms-panel-body label.lms-info-field, .lms-modal md-dialog-content label.lms-info-field {
+    font-weight: 400;
+    margin-bottom: 18px;
+}
+.lms-panel .lms-panel-body md-input-container.md-block, .lms-modal md-dialog-content md-input-container.md-block {
+    margin-top: 10px;
+}
+.lms-panel .lms-panel-body md-input-container.md-block input, .lms-modal md-dialog-content md-input-container.md-block input {
+    max-width: inherit;
+    font-size: 14px;
+}
+.lms-textarea {
+    position: relative;
+    padding: 10px 0 18px;
+}
+.lms-textarea textarea {
+    width: 100%;
+    border-color: rgba(0,0,0,0.12);
+    font-size: 14px;
+    padding: 5px;
+}
+.lms-textarea textarea:focus {
+    outline: 0;
+    border-color: #26A69A;
+}
+.lms-textarea .lms-error-msg {
+    top: inherit;
+    bottom: -10px;
+}
+.lms-panel .lms-panel-body md-input-container.md-block.md-input-focused input, .lms-panel .lms-panel-body md-input-container.md-block.md-input-focused md-select .md-select-value, .lms-panel .lms-panel-body md-input-container.md-block md-select:focus md-select-value, .lms-panel .lms-panel-body md-datepicker .md-datepicker-input-container.md-datepicker-focused, .lms-modal md-dialog-content md-input-container.md-block.md-input-focused input, .lms-modal md-dialog-content md-input-container.md-block.md-input-focused md-select .md-select-value, .lms-modal md-dialog-content md-input-container.md-block md-select:focus md-select-value, .lms-modal md-dialog-content md-datepicker .md-datepicker-input-container.md-datepicker-focused {
+    border-color: #26A69A;
+}
+md-select-menu md-option[selected], md-select-menu md-option[selected]:focus {
+    color: #26A69A;
+}
+.md-datepicker-open .md-datepicker-calendar-icon {
+    fill: #26A69A;
+}
+.md-calendar-date.md-calendar-date-today .md-calendar-date-selection-indicator {
+    border: 1px solid #26A69A;
+}
+.md-calendar-date.md-focus.md-calendar-selected-date .md-calendar-date-selection-indicator {
+    background-color: #26A69A;
+}
+.lms-panel .lms-panel-body md-input-container.md-block .md-errors-spacer, .lms-modal md-dialog-content md-input-container.md-block .md-errors-spacer {
+    display: none;
+}
+.lms-panel .lms-panel-body md-input-container.md-block md-select .md-select-value, .lms-modal md-dialog-content md-input-container.md-block md-select .md-select-value {
+    font-size: 14px;
+}
+.lms-panel .lms-panel-body md-datepicker button.md-datepicker-button, .lms-modal md-dialog-content md-datepicker button.md-datepicker-button {
+    margin: 0;
+    margin-left: -5px;
+}
+.lms-panel .lms-panel-body md-datepicker .md-datepicker-input-container, .lms-modal md-dialog-content md-datepicker .md-datepicker-input-container {
+    margin-left: 3px;
+}
+.lms-panel .lms-panel-body .lms-datepicker, .lms-modal md-dialog-content .lms-datepicker {
+    margin-top: 6px;
+    margin-bottom: 16px;
+    position : relative;
+}
+.lms-panel .lms-panel-body .lms-panel-btns {
+    margin-top: 20px;
+}
+.lms-panel .lms-panel-body .lms-panel-btns .create-btn, .lms-panel .lms-panel-body .lms-panel-btns .update-btn, .lms-panel .lms-panel-body .lms-panel-btns .edit-btn, .lms-panel .lms-panel-body .lms-panel-btns .delete-btn, .lms-panel .lms-panel-body .lms-panel-btns .single-btn-back, .lms-modal md-dialog-actions .add-btn, .lms-modal md-dialog-actions .update-btn, .lms-modal md-dialog-actions .add-btn:hover, .lms-modal md-dialog-actions .update-btn:hover, .lms-modal md-dialog-actions .update-btn:focus, .lms-modal md-dialog-actions .apply-btn, .lms-modal md-dialog-actions .apply-btn:hover, .lms-modal md-dialog-actions .apply-btn:focus, .lms-modal md-dialog-actions .positive-btn, .lms-modal md-dialog-actions .positive-btn:hover, .lms-modal md-dialog-actions .positive-btn:focus {
+    background-color: #26A69A;
+    color: #fff;
+    border: 1px solid #26A69A;
+}
+.lms-panel .lms-panel-body .lms-panel-btns .cancel-btn, .lms-panel .lms-panel-body .lms-panel-btns .back-btn, .lms-modal md-dialog-actions .cancel-btn, .lms-modal md-dialog-actions .cancel-btn:hover {
+    background-color: #fff;
+    color: #26A69A;
+    border: 1px solid #26A69A;
+}
+.lms-panel .lms-panel-body .lms-panel-btns .back-btn a {
+    display: inline-block;
+    width: 100%;
+    color: #26A69A;
+    text-decoration: none;
+}
+.lms-error-msg {
+    font-size: 12px;
+    margin-top: 5px;
+    position: absolute;
+    top: 32px;
+    color: #DD2C00;
+}
+.lms-panel .lms-panel-body .lms-panel-btns .create-btn[disabled], .lms-panel .lms-panel-body .lms-panel-btns .update-btn[disabled], .lms-modal md-dialog-actions .add-btn[disabled], .lms-modal md-dialog-actions .update-btn[disabled], .lms-modal md-dialog-actions .apply-btn[disabled], .lms-modal md-dialog-actions .positive-btn[disabled] {
+    background-color: rgba(38, 166, 154,0.6);
+    color: rgba(255,255,255,0.6) !important;
+    border-color: rgba(38, 166, 154,0.4);
+}
+
+/* Holidays */
+.holiday-grid h3 {
+    margin: 0;
+    padding-left: 18px;
+    padding-bottom: 10px;
+}
+.holiday-grid h3.restricted {
+    padding-top: 25px;
+}
+
+/* Grid */
+.lms-grid .lms-panel {
+    padding: 0;
+}
+md-toolbar.md-default-theme:not(.md-menu-toolbar), md-toolbar:not(.md-menu-toolbar) {
+    border-radius: 3px 3px 0 0;
+    background-color: #26A69A;
+}
+.add-item md-icon {
+    font-size: 21px;
+    margin-right: 5px;
+}
+.lms-grid md-input-container {
+    margin-left: 18px;
+    margin-right: 18px;
+}
+.lms-grid md-input-container.md-input-focused label {
+    color: #26A69A;
+}
+.lms-grid md-input-container input.md-input {
+    max-width: inherit;
+}
+.lms-grid md-input-container.md-input-focused input.md-input {
+    border-color: #26A69A;
+}
+.lms-grid md-input-container .md-errors-spacer {
+    display: none;
+}
+.lms-grid table.md-table th.md-column, .lms-grid table.md-table td.md-cell {
+    font-size: 14px;
+}
+.lms-grid table.md-table td.md-cell a.link-col {
+    color: #26A69A;
+    text-decoration: none;
+}
+.lms-tabs {
+    list-style: none;
+    padding-left: 18px;
+    padding-right: 18px;
+}
+.lms-tabs li {
+    display: table-cell;
+    width: 25%;
+}
+.lms-tabs li .md-button {
+    margin: 0;
+    padding: 10px;
+    border: 1px solid transparent;
+    border-bottom-width: 2px;
+    border-top-color: #ddd;
+    border-radius: 0;
+    color: #888;
+    font-weight: 400;
+    text-transform: none;
+    width: 100%;
+}
+.lms-tabs li .md-button:hover {
+    background: none;
+    color: #333;
+}
+.lms-tabs li.active .md-button {
+    border-color: #ddd;
+    border-top-color: #fff;
+    border-bottom-width: 2px;
+    border-bottom-color: #26A69A;
+    color: #333;
+}
+
+/* Modal */
+.lms-modal {
+    min-width: 600px;
+}
+.lms-modal md-dialog-content {
+    padding: 18px;
+}
+.lms-modal md-dialog-actions {
+    padding: 15px;
+}
+
+/* Pagination */
+.pagination {
+    display: inline-block;
+    padding-left: 0;
+    margin: 20px 0;
+    border-radius: 4px;
+    float: right;
+}
+.pagination>li {
+    display: inline;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #26A69A;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+.pagination>.disabled>a, .pagination>.disabled>a:focus, .pagination>.disabled>a:hover, .pagination>.disabled>span, .pagination>.disabled>span:focus, .pagination>.disabled>span:hover {
+    color: #777;
+    cursor: not-allowed;
+    background-color: #fff;
+    border-color: #ddd;
+}
+.pagination>li:first-child>a, .pagination>li:first-child>span {
+    margin-left: 0;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #26A69A;
+    border-color: #26A69A;
+}
+
+/* Tags Input */
+tags-input .host {
+    margin: 0;
+}
+tags-input .tags {
+    -webkit-appearance: none;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    border-bottom: 1px solid #ddd;
+}
+tags-input.ng-invalid .tags {
+    box-shadow: none;
+}
+tags-input.ng-invalid .tags.focused {
+    border-bottom: 2px solid #26A69A;
+}
+tags-input .tags .input {
+    font-family: 'Roboto', sans-serif;
+}
+tags-input .autocomplete {
+    top: 27px;
+}
+tags-input .autocomplete .suggestion-item.selected {
+    background-color: #26A69A;
+}
+tags-input .tags.focused {
+    box-shadow: none;
+    border-bottom: 2px solid #26A69A;
+}
+tags-input .tags .tag-item {
+    background: none;
+    color: #26A69A;
+}
+
+/* Loader */
+md-progress-circular .md-inner .md-right .md-half-circle {
+    border-right-color: #26A69A;
+}
+md-progress-circular .md-inner .md-left .md-half-circle {
+    border-left-color: #26A69A;
+}
+md-progress-circular .md-inner .md-right .md-half-circle, md-progress-circular .md-inner .md-left .md-half-circle {
+    border-top-color: #26A69A;
+}

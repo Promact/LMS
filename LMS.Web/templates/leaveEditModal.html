@@ -1,0 +1,42 @@
+﻿<md-dialog class="lms-modal">
+    <md-toolbar>
+        <div class="md-toolbar-tools">
+            <h2>Edit Leave Details</h2>
+            <span flex></span>
+            <md-button class="md-icon-button" ng-click="cancelModal()">
+                <md-icon md-font-set="material-icons"> clear </md-icon>
+            </md-button>
+        </div>
+    </md-toolbar>
+    <md-dialog-content>
+        <form name="form" ng-init="getLeaveById()">
+            <div layout="row">
+                <div flex="25">
+                    <label>Name</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <md-select ng-model="leave.LeaveType">
+                            <md-option ng-repeat="leaves in leaveTypes" ng-value="leaves">{{leaves.name}}</md-option>
+                        </md-select>
+                    </md-input-container>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Allowed Days</label>
+                </div>
+                <div flex="40">
+                    <md-input-container md-no-float class="md-block">
+                        <input type="text" placeholder="Allowed Days" value=leave.AllowedDays ng-model="leave.AllowedDays">
+                    </md-input-container>
+                </div>
+            </div>
+        </form>
+    </md-dialog-content>
+    <md-dialog-actions>
+        <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+        <md-button ng-click="editLeave(leave)" ng-disabled="form.$invalid" class="update-btn">Update</md-button>
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+    </md-dialog-actions>
+</md-dialog>

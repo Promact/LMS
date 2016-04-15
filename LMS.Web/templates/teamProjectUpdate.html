@@ -1,0 +1,13 @@
+﻿
+   <div ng-init="projectCreated()">
+
+    ProjectName:<input type="text" ng-model="project.ProjectName" />
+
+
+    TeamLeaderName:<select ng-model='project.TeamLeader' ng-options='employees.Name for employees in teamLeaderList'><option value="">{{project.TeamLeader.Name}}</option></select>
+
+    EmployeeName:<tags-input ng-model="defaultTag">
+        <auto-complete source="loadTags($query)"></auto-complete>
+    </tags-input>
+    <input type="button" value="Save" ng-click="updateTeamProjectToService(project)">
+</div>

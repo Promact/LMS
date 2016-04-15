@@ -1,0 +1,120 @@
+﻿<!--<form name="form" ng-init="getEmployeeByIdDataFromService()">
+    <center>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td>
+                    <input type="text" ng-model="employee.Name" ng-required="true" name="name" />
+                    <p ng-show="form.name.$invalid && form.name.$touched">enter name correctly</p>
+                </td>
+            </tr>
+            <p></p>
+            <tr>
+                <td>Email:</td>
+                <td> {{employee.Email}} </td>
+            </tr>
+            <tr>
+                <td>Designation:</td>
+                <td>
+                    <select ng-model="employee.Designation" ng-required="true" name="designation">
+                        <option>User</option>
+                        <option>TeamLeader</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Contact Number:</td>
+                <td>
+                    <input type="text" ng-model="employee.PhoneNumber" ng-required="true" name="number" />
+                    <p ng-show="form.number.$invalid && form.number.$touched">enter number correctly</p>
+                </td>
+            </tr>
+            <tr>
+                <td>Date Of Joining:</td>
+                <td>
+                    <input type="date" value={{employee.DateOfJoining | date : "yyyy-MM-dd"}} ng-model="employee.DateOfJoining" ng-required="true" name="date" />
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <a href="#/employee/Details/{{employee.Id}}">
+                        <input type="button" value="Back" />
+                    </a>
+                </td>
+                <td><input type="button" value="Update" ng-click=" updateEmployeeFromService(employee)" ng-disabled="form.$invalid" /></td>
+            <tr>
+        </table>
+    </center>
+</form>-->
+
+<div class="update-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Update Employee Details</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form" ng-init="getEmployeeByIdDataFromService()">
+                <div layout="row">
+                    <div flex="25">
+                        <label>Name</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="Name" ng-model="employee.Name" ng-required="true" name="name">
+                            <p ng-show="form.name.$invalid && form.name.$touched" class="lms-error-msg">enter name correctly</p></td>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Email</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Email}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Designation</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <md-select ng-model="employee.Designation" ng-required="true" name="designation">
+                                <md-option selected>User</md-option>
+                                <md-option>TeamLeader</md-option>                               
+                            </md-select>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Contact Number</label>
+                    </div>
+                    <div flex="40">
+                        <md-input-container md-no-float class="md-block">
+                            <input type="text" placeholder="contact Number" ng-model="employee.PhoneNumber" ng-required="true" name="number">
+                            <p ng-show="form.number.$invalid && form.number.$touched" class="lms-error-msg">enter number correctly</p></td>
+                        </md-input-container>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Date of Joining</label>
+                    </div>
+                    <div flex="40" class="lms-datepicker">
+                        <md-datepicker ng-model="employee.DateOfJoining" md-placeholder="Enter date"></md-datepicker>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="update-btn" ng-click=" updateEmployeeFromService(employee)" ng-disabled="form.$invalid">Update</md-button>
+                        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>  
+                        <md-button class="back-btn"><a href="#/employee/Details/{{employee.Id}}">Back</a></md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

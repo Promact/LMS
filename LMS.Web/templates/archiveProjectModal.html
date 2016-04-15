@@ -1,0 +1,23 @@
+﻿<md-dialog name="form" class="lms-modal">
+    <form name="form" ng-init="getProjectById()">
+        <md-dialog-content>
+            <div layout="row">
+                <div flex="80">
+                    <p class="lms-modal-msg">Are you sure you want to archive this project?</p>
+                </div>
+            </div>
+            <div layout="row">
+                <div flex="25">
+                    <label>Name</label>
+                </div>
+                <div flex="40">
+                    <label class="lms-info-field">{{project.ProjectName}}</label>
+                </div>
+            </div>
+        </md-dialog-content>
+        <md-dialog-actions>
+            <md-button ng-click="cancelModal()" class="cancel-btn">Cancel</md-button>
+            <md-button ng-click="archiveTeamProjectToService()" ng-disabled="form.$invalid" class="positive-btn">Archive</md-button>
+        </md-dialog-actions>
+    </form>
+</md-dialog>

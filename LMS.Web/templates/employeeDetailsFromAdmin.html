@@ -1,0 +1,73 @@
+
+    <!--<form ng-init="getEmployeeByIdDataFromService()">
+
+        <center>
+
+                <label>Name:</label>{{employee.Name}}<br />
+                <label>Designation:</label>{{employee.Designation}}<br /> 
+                <label>PhoneNumber:</label>{{employee.PhoneNumber}}<br />
+                <label>DateOfJoining:</label>{{employee.DateOfJoining | date: 'dd/MM/yyyy'}}<br />
+                <label>Email:</label>{{employee.Email}}<br /><br />
+
+            <a href="#/employee/edit/{{employee.Id}}">Edit </a>
+            <a href="#/employee/changePassword/{{employee.Id}}">Change Password </a>
+
+        </center>
+    </form>-->
+
+<div class="details-employee">
+    <div class="lms-panel">
+        <div class="lms-panel-heading">
+            <h4>Employee Details</h4>
+        </div>
+        <div class="lms-panel-body">
+            <form name="form" ng-init="getEmployeeByIdDataFromService()">
+                <div layout="row">
+                    <div flex="25">
+                        <label>Name</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Name}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Designation</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Designation}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Phone Number</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.PhoneNumber}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Date of Joining</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.DateOfJoining | date: 'dd/MM/yyyy'}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex="25">
+                        <label>Email</label>
+                    </div>
+                    <div flex="40">
+                        <label class="lms-info-field">{{employee.Email}}</label>
+                    </div>
+                </div>
+                <div layout="row">
+                    <div flex-offset="25" class="lms-panel-btns">
+                        <md-button class="edit-btn" a href="#/employee/edit/{{employee.Id}}"> Edit </md-button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

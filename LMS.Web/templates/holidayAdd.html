@@ -1,0 +1,40 @@
+﻿<form name="form">
+    <center>
+        <h3><u>Create New Holiday</u></h3>
+
+        <table>
+            <tr>
+                <td><label>Date*:</label></td>
+                <td>
+                    <input type="date" ng-model="newHoliday.Date" name="date" ng-required="true" />
+                    <div style="color:red" ng-show="form.date.$invalid && form.date.$touched">Required</div>
+                </td>
+
+            </tr>
+            <tr>
+                <td><label>Name*:</label></td>
+                <td>
+                    <input type="text" ng-model="newHoliday.Name" name="name" ng-required="true" />
+                </td>
+                <td style="color:red" ng-show="form.name.$invalid && form.name.$touched">Required</td>
+            </tr>
+            <tr>
+                <td><label>Type*:</label></td>
+                <td>
+                    <select ng-model="newHoliday.TypeOfHoliday" name="type" ng-required="true">
+                        <option value="">--Select Type of Holiday--</option>
+                        <option>General</option>
+                        <option>Restricted</option>
+                    </select>
+                </td>
+                <td style="color:red" ng-show="form.type.$invalid && form.type.$touched">Required</td>
+            </tr>
+
+        </table>
+
+        <br />
+        <input type="button" value="Add" ng-click="addHoliday(newHoliday)" ng-disabled="form.$invalid" />
+        <md-progress-circular md-mode="indeterminate" ng-show="loading"></md-progress-circular>
+        <a href="#/HolidayType"> <input type="button" value="Back" /> </a>
+    </center>
+</form>
