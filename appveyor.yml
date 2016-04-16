@@ -1,5 +1,14 @@
 configuration: Release
 
+environment:
+ matrix:
+  - nodejs_version: 0.10
+
+install:
+ - npm install -g tsd
+ - cmd: cd LMS.Web
+ - tsd reinstall
+
 before_build:
  - nuget restore
  
