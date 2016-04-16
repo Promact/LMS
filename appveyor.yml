@@ -15,3 +15,5 @@ before_build:
  
 build:
  verbosity: minimal
+ 
+test: off
