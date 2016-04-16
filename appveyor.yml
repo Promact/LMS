@@ -8,6 +8,7 @@ install:
  - npm install -g tsd
  - cmd: cd LMS.Web
  - tsd reinstall
+ - cd..
 
 before_build:
  - nuget restore
